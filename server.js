@@ -10,6 +10,14 @@ app.get("/api", (req, res) => {
   res.json({ message: "This is the API endpoint." });
 });
 
+app.get("/api/users", (req, res) => {
+  const users = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" },
+  ];
+  res.json(users);
+});
 
 
 const PORT = process.env.PORT || 3000;
