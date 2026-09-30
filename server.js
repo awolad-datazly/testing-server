@@ -20,7 +20,11 @@ app.get("/api/users", (req, res) => {
 });
 
 app.get("/health", (req, res) => {
-  res.json({ status: "OK" });
+  res.json({
+    status: "OK",
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString(),
+  });
 });
 
 const PORT = process.env.PORT || 3000;
